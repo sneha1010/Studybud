@@ -1,0 +1,66 @@
+{
+    "sourceFile": "base/models.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1656258349150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656258474058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n class User(AbstractUser):\r\n     name = models.CharField(max_length=200, null=True)\r\n     email = models.EmailField(unique=True, null=True)\r\n-    bio = models.TextField(null=False)\r\n+    bio = models.TextField(null=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n     USERNAME_FIELD = 'email'\r\n"
+                },
+                {
+                    "date": 1656261317290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,15 +3,16 @@\n \r\n \r\n class User(AbstractUser):\r\n     name = models.CharField(max_length=200, null=True)\r\n-    email = models.EmailField(unique=True, null=True)\r\n+    email = models.EmailField( null=True)\r\n     bio = models.TextField(null=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n     USERNAME_FIELD = 'email'\r\n     REQUIRED_FIELDS = []\r\n+    \r\n \r\n \r\n class Topic(models.Model):\r\n     name = models.CharField(max_length=200)\r\n"
+                },
+                {
+                    "date": 1656261359890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     bio = models.TextField(null=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n-    USERNAME_FIELD = 'email'\r\n+    # USERNAME_FIELD = 'email'\r\n     REQUIRED_FIELDS = []\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656261689742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     bio = models.TextField(null=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n-    # USERNAME_FIELD = 'email'\r\n+    USERNAME_FIELD = 'email'\r\n     REQUIRED_FIELDS = []\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656261737766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n \r\n class User(AbstractUser):\r\n     name = models.CharField(max_length=200, null=True)\r\n-    email = models.EmailField( null=True)\r\n+    email = models.EmailField(unique=True, null=True)\r\n     bio = models.TextField(null=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n"
+                },
+                {
+                    "date": 1656261806776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     bio = models.TextField(null=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n-    USERNAME_FIELD = 'email'\r\n+    # USERNAME_FIELD = 'email'\r\n     REQUIRED_FIELDS = []\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656262362284,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n \r\n class User(AbstractUser):\r\n     name = models.CharField(max_length=200, null=True)\r\n-    email = models.EmailField(unique=True, null=True)\r\n+    email = models.EmailField( null=True)\r\n     bio = models.TextField(null=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n"
+                },
+                {
+                    "date": 1656263767740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n     # USERNAME_FIELD = 'email'\r\n+    username=models.TextField(unique=True)\r\n     REQUIRED_FIELDS = []\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656263897528,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n     # USERNAME_FIELD = 'email'\r\n-    username=models.TextField(unique=True)\r\n+    username=models.CharField(unique=True)\r\n     REQUIRED_FIELDS = []\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656263927778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n     # USERNAME_FIELD = 'email'\r\n-    username=models.CharField(unique=True)\r\n+    username=models.CharField(max_length=200,unique=True)\r\n     REQUIRED_FIELDS = []\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656264890434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n     # USERNAME_FIELD = 'email'\r\n-    username=models.CharField(max_length=200,unique=True)\r\n+    # username=models.CharField(max_length=200,unique=True)\r\n     REQUIRED_FIELDS = []\r\n     \r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656266686216,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \r\n class User(AbstractUser):\r\n     name = models.CharField(max_length=200, null=True)\r\n     email = models.EmailField( null=True)\r\n-    bio = models.TextField(null=True)\r\n+    bio = models.TextField(null=True,blank=True)\r\n \r\n     avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n \r\n     # USERNAME_FIELD = 'email'\r\n"
+                }
+            ],
+            "date": 1656258349150,
+            "name": "Commit-0",
+            "content": "from django.db import models\r\nfrom django.contrib.auth.models import AbstractUser\r\n\r\n\r\nclass User(AbstractUser):\r\n    name = models.CharField(max_length=200, null=True)\r\n    email = models.EmailField(unique=True, null=True)\r\n    bio = models.TextField(null=False)\r\n\r\n    avatar = models.ImageField(null=True, default=\"avatar.svg\")\r\n\r\n    USERNAME_FIELD = 'email'\r\n    REQUIRED_FIELDS = []\r\n\r\n\r\nclass Topic(models.Model):\r\n    name = models.CharField(max_length=200)\r\n\r\n    def __str__(self):\r\n        return self.name\r\n\r\n\r\nclass Room(models.Model):\r\n    host = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)\r\n    topic = models.ForeignKey(Topic, on_delete=models.SET_NULL, null=True)\r\n    name = models.CharField(max_length=200)\r\n    description = models.TextField(null=True, blank=True)\r\n    participants = models.ManyToManyField(\r\n        User, related_name='participants', blank=True)\r\n    updated = models.DateTimeField(auto_now=True)\r\n    created = models.DateTimeField(auto_now_add=True)\r\n\r\n    class Meta:\r\n        ordering = ['-updated', '-created']\r\n\r\n    def __str__(self):\r\n        return self.name\r\n\r\n\r\nclass Message(models.Model):\r\n    user = models.ForeignKey(User, on_delete=models.CASCADE)\r\n    room = models.ForeignKey(Room, on_delete=models.CASCADE)\r\n    body = models.TextField()\r\n    updated = models.DateTimeField(auto_now=True)\r\n    created = models.DateTimeField(auto_now_add=True)\r\n\r\n    class Meta:\r\n        ordering = ['-updated', '-created']\r\n\r\n    def __str__(self):\r\n        return self.body[0:50]\r\n"
+        }
+    ]
+}

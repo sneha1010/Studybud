@@ -1,0 +1,18 @@
+{
+    "sourceFile": "base/templates/base/activity.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1656256713392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1656256713392,
+            "name": "Commit-0",
+            "content": "{% extends 'main.html' %}\r\n\r\n{% block content %}\r\n<main class=\"layout\">\r\n  <div class=\"container\">\r\n    <div class=\"layout__box\">\r\n      <div class=\"layout__boxHeader\">\r\n        <div class=\"layout__boxTitle\">\r\n          <a href=\"{% url 'home' %}\">\r\n            <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 32 32\">\r\n              <title>arrow-left</title>\r\n              <path\r\n                d=\"M13.723 2.286l-13.723 13.714 13.719 13.714 1.616-1.611-10.96-10.96h27.625v-2.286h-27.625l10.965-10.965-1.616-1.607z\">\r\n              </path>\r\n           \r\n            </svg>\r\n          </a>\r\n          <h3>Recent Activities</h3>\r\n        </div>\r\n      </div>\r\n\r\n      <div class=\"activities-page layout__body\">\r\n\r\n        {% for message in room_messages %}\r\n        <div class=\"activities__box\">\r\n          <div class=\"activities__boxHeader roomListRoom__header\">\r\n            <a href=\"{% url 'user-profile' message.user.id %}\" class=\"roomListRoom__author\">\r\n              <div class=\"avatar avatar--small\">\r\n                <img src=\"{{message.user.avatar.url}}\" />\r\n              </div>\r\n              <p>\r\n                @{{message.user}}\r\n                <span>{{message.created|timesince}} ago</span>\r\n              </p>\r\n            </a>\r\n\r\n            {% if request.user == message.user %}\r\n            <div class=\"roomListRoom__actions\">\r\n              <a href=\"{% url 'delete-message' message.id %}\">\r\n                <svg version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"32\" viewBox=\"0 0 32 32\">\r\n                  <title>remove</title>\r\n                  <path\r\n                    d=\"M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z\">\r\n                  </path>\r\n                </svg>\r\n              </a>\r\n            </div>\r\n            {% endif %}\r\n\r\n          </div>\r\n          <div class=\"activities__boxContent\">\r\n            <p>replied to post “<a href=\"{% url 'room' message.room.id %}\">{{message.room}}</a>”</p>\r\n            <div class=\"activities__boxRoomContent\">\r\n              {{message.body}}\r\n            </div>\r\n          </div>\r\n        </div>\r\n        {% endfor %}\r\n\r\n      </div>\r\n    </div>\r\n  </div>\r\n</main>\r\n{% endblock content %}"
+        }
+    ]
+}
