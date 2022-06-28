@@ -1,0 +1,22 @@
+{
+    "sourceFile": "studybud/urls.py",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1656430324179,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1656430853129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,12 +4,13 @@\n from django.conf.urls.static import static\r\n \r\n from django.views.static import static\r\n from django.conf.urls import url\r\n+\r\n urlpatterns = [\r\n     path('admin/', admin.site.urls),\r\n     path('', include('base.urls')),\r\n-    path('api/', include('base.api.urls'))\r\n+    path('api/', include('base.api.urls')),\r\n     url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), \r\n     url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), \r\n ]\r\n \r\n"
+                }
+            ],
+            "date": 1656430324179,
+            "name": "Commit-0",
+            "content": "from django.contrib import admin\r\nfrom django.urls import path, include\r\nfrom django.conf import settings\r\nfrom django.conf.urls.static import static\r\n\r\nfrom django.views.static import static\r\nfrom django.conf.urls import url\r\nurlpatterns = [\r\n    path('admin/', admin.site.urls),\r\n    path('', include('base.urls')),\r\n    path('api/', include('base.api.urls'))\r\n    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), \r\n    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), \r\n]\r\n\r\nurlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\r\n"
+        }
+    ]
+}

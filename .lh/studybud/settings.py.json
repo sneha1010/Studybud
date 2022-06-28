@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1656262490476,
@@ -12,6 +12,26 @@
                 {
                     "date": 1656262537056,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     'rest_framework',\r\n     \"corsheaders\",\r\n ]\r\n \r\n-# AUTH_USER_MODEL = 'base.User'\r\n+AUTH_USER_MODEL = 'base.User'\r\n \r\n MIDDLEWARE = [\r\n     'django.middleware.security.SecurityMiddleware',\r\n \r\n"
+                },
+                {
+                    "date": 1656270451777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     'rest_framework',\r\n     \"corsheaders\",\r\n ]\r\n \r\n-AUTH_USER_MODEL = 'base.User'\r\n+# AUTH_USER_MODEL = 'base.User'\r\n \r\n MIDDLEWARE = [\r\n     'django.middleware.security.SecurityMiddleware',\r\n \r\n"
+                },
+                {
+                    "date": 1656270462093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,9 +43,9 @@\n     'rest_framework',\r\n     \"corsheaders\",\r\n ]\r\n \r\n-# AUTH_USER_MODEL = 'base.User'\r\n+AUTH_USER_MODEL = 'base.User'\r\n \r\n MIDDLEWARE = [\r\n     'django.middleware.security.SecurityMiddleware',\r\n \r\n"
+                },
+                {
+                    "date": 1656430851133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,11 @@\n # SECURITY WARNING: keep the secret key used in production secret!\r\n SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb'\r\n \r\n # SECURITY WARNING: don't run with debug turned on in production!\r\n-DEBUG = True\r\n+DEBUG = False\r\n \r\n-ALLOWED_HOSTS = []\r\n+ALLOWED_HOSTS = ['127.0.0.1']\r\n \r\n \r\n # Application definition\r\n \r\n@@ -47,9 +47,9 @@\n AUTH_USER_MODEL = 'base.User'\r\n \r\n MIDDLEWARE = [\r\n     'django.middleware.security.SecurityMiddleware',\r\n-\r\n+    'whitenoise.middleware.WhiteNoiseMiddleware',\r\n     \"corsheaders.middleware.CorsMiddleware\",\r\n \r\n     'django.contrib.sessions.middleware.SessionMiddleware',\r\n     'django.middleware.common.CommonMiddleware',\r\n"
+                },
+                {
+                    "date": 1656430965945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,9 +137,9 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-# STATIC_ROOT =\r\n+STATIC_ROOT = os.path.join(BASE_DIR,'static')\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656431126446,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,10 +137,10 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-STATIC_ROOT = os.path.join(BASE_DIR,'static')\r\n \r\n+\r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\r\n"
                 }
             ],
             "date": 1656262490476,
