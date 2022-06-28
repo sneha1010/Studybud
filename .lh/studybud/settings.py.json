@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1656262490476,
@@ -32,6 +32,50 @@
                 {
                     "date": 1656431126446,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -137,10 +137,10 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-STATIC_ROOT = os.path.join(BASE_DIR,'static')\r\n \r\n+\r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\r\n"
+                },
+                {
+                    "date": 1656432116356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n For the full list of settings and their values, see\r\n https://docs.djangoproject.com/en/3.2/ref/settings/\r\n \"\"\"\r\n \r\n+import os\r\n from pathlib import Path\r\n \r\n # Build paths inside the project like this: BASE_DIR / 'subdir'.\r\n BASE_DIR = Path(__file__).resolve().parent.parent\r\n@@ -47,9 +48,9 @@\n AUTH_USER_MODEL = 'base.User'\r\n \r\n MIDDLEWARE = [\r\n     'django.middleware.security.SecurityMiddleware',\r\n-    'whitenoise.middleware.WhiteNoiseMiddleware',\r\n+    \r\n     \"corsheaders.middleware.CorsMiddleware\",\r\n \r\n     'django.contrib.sessions.middleware.SessionMiddleware',\r\n     'django.middleware.common.CommonMiddleware',\r\n@@ -137,10 +138,10 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n+STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n-\r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\r\n"
+                },
+                {
+                    "date": 1656432174193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656432393495,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n AUTH_USER_MODEL = 'base.User'\r\n \r\n MIDDLEWARE = [\r\n     'django.middleware.security.SecurityMiddleware',\r\n-    \r\n+    'whitenoise.middleware.WhiteNoiseMiddleware',\r\n     \"corsheaders.middleware.CorsMiddleware\",\r\n \r\n     'django.contrib.sessions.middleware.SessionMiddleware',\r\n     'django.middleware.common.CommonMiddleware',\r\n"
+                },
+                {
+                    "date": 1656433243401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \r\n # SECURITY WARNING: don't run with debug turned on in production!\r\n DEBUG = False\r\n \r\n-ALLOWED_HOSTS = ['127.0.0.1']\r\n+ALLOWED_HOSTS = []\r\n \r\n \r\n # Application definition\r\n \r\n"
+                },
+                {
+                    "date": 1656433256604,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n # SECURITY WARNING: keep the secret key used in production secret!\r\n SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb'\r\n \r\n # SECURITY WARNING: don't run with debug turned on in production!\r\n-DEBUG = False\r\n+DEBUG = True\r\n \r\n ALLOWED_HOSTS = []\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656433285342,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,11 @@\n # SECURITY WARNING: keep the secret key used in production secret!\r\n SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb'\r\n \r\n # SECURITY WARNING: don't run with debug turned on in production!\r\n-DEBUG = True\r\n+DEBUG = False\r\n \r\n-ALLOWED_HOSTS = []\r\n+ALLOWED_HOSTS = ['127.0.0.1']\r\n \r\n \r\n # Application definition\r\n \r\n"
+                },
+                {
+                    "date": 1656434088205,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656434132318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n # SECURITY WARNING: keep the secret key used in production secret!\r\n SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb'\r\n \r\n # SECURITY WARNING: don't run with debug turned on in production!\r\n-DEBUG = False\r\n+DEBUG = True\r\n \r\n ALLOWED_HOSTS = ['127.0.0.1']\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1656434149131,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n \r\n # SECURITY WARNING: don't run with debug turned on in production!\r\n DEBUG = True\r\n \r\n-ALLOWED_HOSTS = ['127.0.0.1']\r\n+ALLOWED_HOSTS = []\r\n \r\n \r\n # Application definition\r\n \r\n"
+                },
+                {
+                    "date": 1656434262477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656434848418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
                 }
             ],
             "date": 1656262490476,
