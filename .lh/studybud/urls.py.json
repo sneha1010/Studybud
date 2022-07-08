@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1656430324179,
@@ -20,6 +20,10 @@
                 {
                     "date": 1656432194860,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,11 +2,10 @@\n from django.urls import path, include\r\n from django.conf import settings\r\n from django.conf.urls.static import static\r\n \r\n-from django.views.static import static\r\n-from django.conf.urls import url\r\n \r\n+\r\n urlpatterns = [\r\n     path('admin/', admin.site.urls),\r\n     path('', include('base.urls')),\r\n     path('api/', include('base.api.urls')),\r\n"
+                },
+                {
+                    "date": 1656435755475,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,16 @@\n from django.urls import path, include\r\n from django.conf import settings\r\n from django.conf.urls.static import static\r\n \r\n+from django.views.static import static\r\n+from django.conf.urls import url\r\n \r\n-\r\n urlpatterns = [\r\n     path('admin/', admin.site.urls),\r\n     path('', include('base.urls')),\r\n     path('api/', include('base.api.urls')),\r\n-    \r\n+    url(r'^media/(?P<path>.*)$', serve,{'document_root':       settings.MEDIA_ROOT}), \r\n+    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), \r\n ]\r\n \r\n urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)\r\n"
                 }
             ],
             "date": 1656430324179,

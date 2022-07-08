@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 17,
+            "activePatchIndex": 23,
             "patches": [
                 {
                     "date": 1656262490476,
@@ -76,6 +76,30 @@
                 {
                     "date": 1656434848418,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656435374156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,11 +23,11 @@\n # SECURITY WARNING: keep the secret key used in production secret!\r\n SECRET_KEY = 'django-insecure-3#av2c6nptlbbb6^muqkchu&fe3wv&n$t2+g$v!ir-f5%doocb'\r\n \r\n # SECURITY WARNING: don't run with debug turned on in production!\r\n-DEBUG = True\r\n+DEBUG = False\r\n \r\n-ALLOWED_HOSTS = []\r\n+ALLOWED_HOSTS = ['127.0.0.1']\r\n \r\n \r\n # Application definition\r\n \r\n"
+                },
+                {
+                    "date": 1656435507272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,15 +132,15 @@\n \r\n STATIC_URL = '/static/'\r\n MEDIA_URL = '/images/'\r\n \r\n-STATICFILES_DIRS = [\r\n-    BASE_DIR / 'static'\r\n-]\r\n+# STATICFILES_DIRS = [\r\n+#     BASE_DIR / 'static'\r\n+# ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656435514635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -138,9 +138,9 @@\n # ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656435527813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,15 +132,15 @@\n \r\n STATIC_URL = '/static/'\r\n MEDIA_URL = '/images/'\r\n \r\n-# STATICFILES_DIRS = [\r\n-#     BASE_DIR / 'static'\r\n-# ]\r\n+STATICFILES_DIRS = [\r\n+    BASE_DIR / 'static'\r\n+]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n \r\n-STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n+# STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n"
+                },
+                {
+                    "date": 1656435646805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -132,14 +132,14 @@\n \r\n STATIC_URL = '/static/'\r\n MEDIA_URL = '/images/'\r\n \r\n-STATICFILES_DIRS = [\r\n-    BASE_DIR / 'static'\r\n-]\r\n+# STATICFILES_DIRS = [\r\n+#     BASE_DIR / 'static'\r\n+# ]\r\n \r\n MEDIA_ROOT = BASE_DIR / 'static/images'\r\n-\r\n+STATIC_ROOT=BASE_DIR/'static'\r\n # STATIC_ROOT = [os.path.join(BASE_DIR,'static')]\r\n \r\n # Default primary key field type\r\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n"
+                },
+                {
+                    "date": 1656436526363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,9 @@\n \"\"\"\r\n \r\n import os\r\n from pathlib import Path\r\n+import django_heroku\r\n \r\n # Build paths inside the project like this: BASE_DIR / 'subdir'.\r\n BASE_DIR = Path(__file__).resolve().parent.parent\r\n \r\n@@ -145,6 +146,6 @@\n # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field\r\n \r\n DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'\r\n \r\n-\r\n+django_heroku.settins(locals())\r\n CORS_ALLOW_ALL_ORIGINS = True\r\n"
                 }
             ],
             "date": 1656262490476,
